@@ -17,6 +17,8 @@ FinOps Hubs + Terraform
 - [ ] Determine which provider  is preferred
   - file partitioning cannot be toggled with `azurerm`
   - one-time exports cannot be configured with `azurerm`
+  - PROBABLY possible hsomehow to get focus report through `azapi` IF POSSIBLE through bicep/json
+  - almost guaranteed to NOT be able to do it with `azurerm`
 
 
 ## Leverages
