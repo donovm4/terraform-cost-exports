@@ -7,8 +7,17 @@ FinOps Hubs + Terraform
 ## Objective(s)
 
 - [x] Configure cost exports with `azapi`
-- [ ] Configure cost exports with `azurerm`
+  - [x] daily
+  - [x] monthly
+  - [x] one-time
+- [x] Configure cost exports with `azurerm`
+  - [x] daily
+  - [x] monthly
+  - [ ] one-time
 - [ ] Determine which provider  is preferred
+  - file partitioning cannot be toggled with `azurerm`
+  - one-time exports cannot be configured with `azurerm`
+
 
 ## Leverages
 

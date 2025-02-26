@@ -32,25 +32,3 @@ resource "azurerm_storage_container" "example" {
   name                 = "tfcontainer"
   storage_account_id = azurerm_storage_account.example.id
 }
-
-
-# resource "azurerm_subscription_cost_management_export" "example" {
-#   name                         = "tfexport"
-#   subscription_id = data.azurerm_subscription.example.id
-#   recurrence_type              = "Monthly"
-#   recurrence_period_start_date = "2025-01-01T00:00:00Z"
-#   recurrence_period_end_date   = "2025-03-01T00:00:00Z"
-#   file_format                  = "Csv"
-# #   active = false 
-
-#   export_data_storage_location {
-#     container_id     = azurerm_storage_container.example.resource_manager_id
-#     root_folder_path = "/root/updated"
-#   }
-
-#   export_data_options {
-#     type       = "ActualCost"
-#     time_frame = "MonthToDate"
-#   }
-# }
-
