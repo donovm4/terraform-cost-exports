@@ -1,37 +1,22 @@
 resource "azapi_resource" "monthly_export_azapi" {
-  type = "Microsoft.CostManagement/exports@2024-08-01"
+  type = var.nonfocus_export_api_version
   name = "tfexport-monthly-azapi"
   parent_id = data.azurerm_subscription.example.id
   location = "East US"
   body = {
     properties = {
       definition = {
-        # dataSet = {
-        #   configuration = {
-        #     columns = [
-        #       "string"
-        #     ]
-        #   }
-        #   granularity = "Daily"
-        # }
         timeframe = "MonthToDate"
-        # timePeriod = {
-        #   from = ""
-        #   to = ""
-        # }
         type = "ActualCost"
       }
       deliveryInfo = {
         destination = {
           container = azurerm_storage_container.example.name
           resourceId = azurerm_storage_account.example.id
-          rootFolderPath = "/root/updated"
+          rootFolderPath = azurerm_storage_container.example.name
         }
       }
       format = "Csv"
-    #   partitionData = true
-    #   runHistory = {
-    #   }
       schedule = {
         recurrence = "Monthly"
         recurrencePeriod = {

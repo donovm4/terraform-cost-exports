@@ -51,4 +51,7 @@ avm.tflint_example.merged.hcl
 avm.tflint_module.merged.hcl
 
 # Ignore variable storing sensitive information
-variables.tf
+sensitive.tf
+
+# Ignore CLI Command files
+azure_cli.txt
